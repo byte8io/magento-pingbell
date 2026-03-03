@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Byte8 Ltd. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Logger -->
+    <virtualType name="Byte8\PingBell\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/pingbell.log</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Byte8\PingBell\Logger\Logger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="name" xsi:type="string">byte8_pingbell</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Byte8\PingBell\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Inject logger into PingBellClient -->
+    <type name="Byte8\PingBell\Model\PingBellClient">
+        <arguments>
+            <argument name="logger" xsi:type="object">Byte8\PingBell\Logger\Logger</argument>
+        </arguments>
+    </type>
+
+    <!-- Inject logger into observer -->
+    <type name="Byte8\PingBell\Observer\SendPingBellNotification">
+        <arguments>
+            <argument name="logger" xsi:type="object">Byte8\PingBell\Logger\Logger</argument>
+        </arguments>
+    </type>
+</config>

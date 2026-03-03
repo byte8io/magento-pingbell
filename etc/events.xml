@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Byte8 Ltd. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <!-- Send PingBell notification when order is placed -->
+    <event name="sales_order_place_after">
+        <observer name="byte8_pingbell_send_notification"
+                  instance="Byte8\PingBell\Observer\SendPingBellNotification"/>
+    </event>
+</config>

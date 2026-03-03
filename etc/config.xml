@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Byte8 Ltd. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <byte8_pingbell>
+            <general>
+                <enabled>0</enabled>
+                <api_key/>
+                <pingbell_id/>
+            </general>
+        </byte8_pingbell>
+    </default>
+</config>

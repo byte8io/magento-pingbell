@@ -1,0 +1,26 @@
+<?php
+/**
+ * Copyright © Byte8 Ltd. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+
+/** @var \Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells $block */
+?>
+<td class="label"></td>
+<td class="value">
+    <button id="pingbell_fetch_bells_btn" type="button" class="action-default scalable">
+        <span><?= $block->escapeHtml(__('Fetch Bells')) ?></span>
+    </button>
+    <div id="pingbell_fetch_bells_result" style="margin-top: 8px;"></div>
+    <script type="text/x-magento-init">
+        {
+            "#pingbell_fetch_bells_btn": {
+                "Byte8_PingBell/js/fetch-bells": {
+                    "ajaxUrl": "<?= $block->escapeUrl($block->getAjaxUrl()) ?>",
+                    "apiKeyFieldId": "byte8_pingbell_general_api_key",
+                    "pingbellIdFieldId": "byte8_pingbell_general_pingbell_id"
+                }
+            }
+        }
+    </script>
+</td>

@@ -25,7 +25,7 @@ class FetchBells extends Field
         return $this->_toHtml();
     }
 
-    protected function _decorateRowHtml(AbstractElement $element, string $html): string
+    protected function _decorateRowHtml(AbstractElement $element, $html): string
     {
         return '<tr id="row_' . $element->getHtmlId() . '">' . $html . '</tr>';
     }

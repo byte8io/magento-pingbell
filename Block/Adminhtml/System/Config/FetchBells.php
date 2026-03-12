@@ -15,13 +15,32 @@ class FetchBells extends Field
 {
     protected $_template = 'Byte8_PingBell::system/config/fetch_bells.phtml';
 
+    private ?AbstractElement $element = null;
+
     public function getAjaxUrl(): string
     {
         return $this->getUrl('byte8_pingbell/config/fetchBells');
     }
 
+    public function getButtonId(): string
+    {
+        return $this->element->getHtmlId() . '_btn';
+    }
+
+    public function getResultContainerId(): string
+    {
+        return $this->element->getHtmlId() . '_result';
+    }
+
+    public function getTargetFieldId(): string
+    {
+        return str_replace('fetch_bells', 'pingbell_id', $this->element->getHtmlId());
+    }
+
     protected function _getElementHtml(AbstractElement $element): string
     {
+        $this->element = $element;
+
         return $this->_toHtml();
     }
 

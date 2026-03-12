@@ -7,7 +7,7 @@ define([
 
     return function (config, element) {
         var $button = $(element),
-            $resultContainer = $('#pingbell_fetch_bells_result');
+            $resultContainer = $('#' + config.resultContainerId);
 
         $button.on('click', function () {
             var apiKeyValue = $('#' + config.apiKeyFieldId).val(),
@@ -41,7 +41,6 @@ define([
                     // Build a select dropdown for choosing a bell
                     if (response.bells && response.bells.length) {
                         var $select = $('<select>')
-                            .attr('id', 'pingbell_bell_selector')
                             .css('margin-top', '6px');
 
                         $select.append($('<option>').val('').text($t('-- Select a Bell --')));

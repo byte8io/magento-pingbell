@@ -31,10 +31,41 @@
         </arguments>
     </type>
 
-    <!-- Inject logger into observer -->
+    <!-- Inject logger into base observer -->
     <type name="Byte8\PingBell\Observer\SendPingBellNotification">
         <arguments>
             <argument name="logger" xsi:type="object">Byte8\PingBell\Logger\Logger</argument>
         </arguments>
     </type>
+
+    <!-- Event-specific observer virtual types -->
+    <virtualType name="Byte8\PingBell\Observer\SendNewOrderNotification" type="Byte8\PingBell\Observer\SendPingBellNotification">
+        <arguments>
+            <argument name="eventKey" xsi:type="string">new_order</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Byte8\PingBell\Observer\SendNewInvoiceNotification" type="Byte8\PingBell\Observer\SendPingBellNotification">
+        <arguments>
+            <argument name="eventKey" xsi:type="string">new_invoice</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Byte8\PingBell\Observer\SendNewShipmentNotification" type="Byte8\PingBell\Observer\SendPingBellNotification">
+        <arguments>
+            <argument name="eventKey" xsi:type="string">new_shipment</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Byte8\PingBell\Observer\SendNewCreditmemoNotification" type="Byte8\PingBell\Observer\SendPingBellNotification">
+        <arguments>
+            <argument name="eventKey" xsi:type="string">new_creditmemo</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Byte8\PingBell\Observer\SendNewCustomerNotification" type="Byte8\PingBell\Observer\SendPingBellNotification">
+        <arguments>
+            <argument name="eventKey" xsi:type="string">new_customer</argument>
+        </arguments>
+    </virtualType>
 </config>

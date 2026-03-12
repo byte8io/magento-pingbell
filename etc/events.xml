@@ -8,9 +8,28 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
 
-    <!-- Send PingBell notification when order is placed -->
+    <!-- New Order -->
     <event name="sales_order_place_after">
-        <observer name="byte8_pingbell_send_notification"
-                  instance="Byte8\PingBell\Observer\SendPingBellNotification"/>
+        <observer name="byte8_pingbell_new_order" instance="Byte8\PingBell\Observer\SendNewOrderNotification"/>
+    </event>
+
+    <!-- New Invoice -->
+    <event name="sales_order_invoice_save_after">
+        <observer name="byte8_pingbell_new_invoice" instance="Byte8\PingBell\Observer\SendNewInvoiceNotification"/>
+    </event>
+
+    <!-- New Shipment -->
+    <event name="sales_order_shipment_save_after">
+        <observer name="byte8_pingbell_new_shipment" instance="Byte8\PingBell\Observer\SendNewShipmentNotification"/>
+    </event>
+
+    <!-- New Credit Memo -->
+    <event name="sales_order_creditmemo_save_after">
+        <observer name="byte8_pingbell_new_creditmemo" instance="Byte8\PingBell\Observer\SendNewCreditmemoNotification"/>
+    </event>
+
+    <!-- New Customer Registration -->
+    <event name="customer_register_success">
+        <observer name="byte8_pingbell_new_customer" instance="Byte8\PingBell\Observer\SendNewCustomerNotification"/>
     </event>
 </config>

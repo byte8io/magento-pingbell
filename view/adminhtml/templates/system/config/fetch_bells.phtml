@@ -8,17 +8,18 @@
 ?>
 <td class="label"></td>
 <td class="value">
-    <button id="pingbell_fetch_bells_btn" type="button" class="action-default scalable">
+    <button id="<?= $block->escapeHtmlAttr($block->getButtonId()) ?>" type="button" class="action-default scalable">
         <span><?= $block->escapeHtml(__('Fetch Bells')) ?></span>
     </button>
-    <div id="pingbell_fetch_bells_result" style="margin-top: 8px;"></div>
+    <div id="<?= $block->escapeHtmlAttr($block->getResultContainerId()) ?>" style="margin-top: 8px;"></div>
     <script type="text/x-magento-init">
         {
-            "#pingbell_fetch_bells_btn": {
+            "#<?= $block->escapeJs($block->getButtonId()) ?>": {
                 "Byte8_PingBell/js/fetch-bells": {
                     "ajaxUrl": "<?= $block->escapeUrl($block->getAjaxUrl()) ?>",
                     "apiKeyFieldId": "byte8_pingbell_general_api_key",
-                    "pingbellIdFieldId": "byte8_pingbell_general_pingbell_id"
+                    "pingbellIdFieldId": "<?= $block->escapeJs($block->getTargetFieldId()) ?>",
+                    "resultContainerId": "<?= $block->escapeJs($block->getResultContainerId()) ?>"
                 }
             }
         }

@@ -19,7 +19,8 @@ class SendPingBellNotification implements ObserverInterface
     public function __construct(
         private readonly Config $config,
         private readonly PingBellClient $pingBellClient,
-        private readonly LoggerInterface $logger
+        private readonly LoggerInterface $logger,
+        private readonly string $eventKey = 'new_order'
     ) {
     }
 
@@ -29,20 +30,17 @@ class SendPingBellNotification implements ObserverInterface
             return;
         }
 
-        $pingBellId = $this->config->getPingBellId();
+        $pingBellId = $this->config->getPingBellId($this->eventKey);
 
-        if ($pingBellId === '') {
+        if (!$pingBellId) {
             return;
         }
 
         try {
-            $order = $observer->getEvent()->getOrder();
             $this->pingBellClient->sendNotification($pingBellId);
-            $this->logger->info(
-                'PingBell notification triggered for order ' . $order->getIncrementId()
-            );
+            $this->logger->info('PingBell notification sent for event: ' . $this->eventKey);
         } catch (\Exception $e) {
-            $this->logger->error('PingBell observer error: ' . $e->getMessage());
+            $this->logger->error('PingBell observer error (' . $this->eventKey . '): ' . $e->getMessage());
         }
     }
 }

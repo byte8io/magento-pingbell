@@ -12,8 +12,14 @@
             <general>
                 <enabled>0</enabled>
                 <api_key/>
-                <pingbell_id/>
             </general>
+            <events>
+                <new_order_pingbell_id/>
+                <new_invoice_pingbell_id/>
+                <new_shipment_pingbell_id/>
+                <new_creditmemo_pingbell_id/>
+                <new_customer_pingbell_id/>
+            </events>
         </byte8_pingbell>
     </default>
 </config>

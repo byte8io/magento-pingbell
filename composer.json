@@ -2,7 +2,7 @@
     "name": "byte8/module-pingbell",
     "description": "PingBell real-time order notifications for Magento 2",
     "type": "magento2-module",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Byte8 Ltd",

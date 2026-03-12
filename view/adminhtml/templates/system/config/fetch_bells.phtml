@@ -6,22 +6,22 @@
 
 /** @var \Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells $block */
 ?>
-<td class="label"></td>
-<td class="value">
+<?= $block->getElementHtml() ?>
+<div style="margin-top: 8px;">
     <button id="<?= $block->escapeHtmlAttr($block->getButtonId()) ?>" type="button" class="action-default scalable">
         <span><?= $block->escapeHtml(__('Fetch Bells')) ?></span>
     </button>
-    <div id="<?= $block->escapeHtmlAttr($block->getResultContainerId()) ?>" style="margin-top: 8px;"></div>
-    <script type="text/x-magento-init">
-        {
-            "#<?= $block->escapeJs($block->getButtonId()) ?>": {
-                "Byte8_PingBell/js/fetch-bells": {
-                    "ajaxUrl": "<?= $block->escapeUrl($block->getAjaxUrl()) ?>",
-                    "apiKeyFieldId": "byte8_pingbell_general_api_key",
-                    "pingbellIdFieldId": "<?= $block->escapeJs($block->getTargetFieldId()) ?>",
-                    "resultContainerId": "<?= $block->escapeJs($block->getResultContainerId()) ?>"
-                }
+    <div id="<?= $block->escapeHtmlAttr($block->getResultContainerId()) ?>" style="margin-top: 6px;"></div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#<?= $block->escapeJs($block->getButtonId()) ?>": {
+            "Byte8_PingBell/js/fetch-bells": {
+                "ajaxUrl": "<?= $block->escapeUrl($block->getAjaxUrl()) ?>",
+                "apiKeyFieldId": "byte8_pingbell_general_api_key",
+                "pingbellIdFieldId": "<?= $block->escapeJs($block->getFieldId()) ?>",
+                "resultContainerId": "<?= $block->escapeJs($block->getResultContainerId()) ?>"
             }
         }
-    </script>
-</td>
+    }
+</script>

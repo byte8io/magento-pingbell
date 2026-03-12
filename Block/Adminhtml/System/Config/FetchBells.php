@@ -24,7 +24,7 @@ class FetchBells extends Field
 
     public function getButtonId(): string
     {
-        return $this->element->getHtmlId() . '_btn';
+        return $this->element->getHtmlId() . '_fetch_btn';
     }
 
     public function getResultContainerId(): string
@@ -32,9 +32,14 @@ class FetchBells extends Field
         return $this->element->getHtmlId() . '_result';
     }
 
-    public function getTargetFieldId(): string
+    public function getFieldId(): string
     {
-        return str_replace('fetch_bells', 'pingbell_id', $this->element->getHtmlId());
+        return $this->element->getHtmlId();
+    }
+
+    public function getElementHtml(): string
+    {
+        return $this->element->getElementHtml();
     }
 
     protected function _getElementHtml(AbstractElement $element): string

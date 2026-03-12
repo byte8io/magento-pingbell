@@ -93,4 +93,4 @@ var/log/pingbell.log
 
 ## License
 
-Proprietary — see [LICENSE.txt](LICENSE.txt) for details.
+MIT — see [LICENSE.txt](LICENSE.txt) for details.

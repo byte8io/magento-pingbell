@@ -39,54 +39,34 @@
                     <field id="byte8_pingbell/general/enabled">1</field>
                 </depends>
 
-                <!-- New Order -->
-                <field id="new_order_fetch_bells" translate="label" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="new_order_pingbell_id" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>New Order</label>
-                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
-                </field>
-                <field id="new_order_pingbell_id" translate="label comment" type="text" sortOrder="110" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>New Order — PingBell ID</label>
                     <comment>Notified when a new order is placed.</comment>
+                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
                 </field>
 
-                <!-- New Invoice -->
-                <field id="new_invoice_fetch_bells" translate="label" sortOrder="200" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="new_invoice_pingbell_id" translate="label comment" type="text" sortOrder="200" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>New Invoice</label>
-                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
-                </field>
-                <field id="new_invoice_pingbell_id" translate="label comment" type="text" sortOrder="210" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>New Invoice — PingBell ID</label>
                     <comment>Notified when a new invoice is created.</comment>
+                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
                 </field>
 
-                <!-- New Shipment -->
-                <field id="new_shipment_fetch_bells" translate="label" sortOrder="300" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="new_shipment_pingbell_id" translate="label comment" type="text" sortOrder="300" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>New Shipment</label>
-                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
-                </field>
-                <field id="new_shipment_pingbell_id" translate="label comment" type="text" sortOrder="310" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>New Shipment — PingBell ID</label>
                     <comment>Notified when a new shipment is created.</comment>
+                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
                 </field>
 
-                <!-- New Credit Memo -->
-                <field id="new_creditmemo_fetch_bells" translate="label" sortOrder="400" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="new_creditmemo_pingbell_id" translate="label comment" type="text" sortOrder="400" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>New Credit Memo</label>
-                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
-                </field>
-                <field id="new_creditmemo_pingbell_id" translate="label comment" type="text" sortOrder="410" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>New Credit Memo — PingBell ID</label>
                     <comment>Notified when a new credit memo is created.</comment>
+                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
                 </field>
 
-                <!-- New Customer -->
-                <field id="new_customer_fetch_bells" translate="label" sortOrder="500" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="new_customer_pingbell_id" translate="label comment" type="text" sortOrder="500" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>New Customer Registration</label>
-                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
-                </field>
-                <field id="new_customer_pingbell_id" translate="label comment" type="text" sortOrder="510" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>New Customer — PingBell ID</label>
                     <comment>Notified when a new customer registers.</comment>
+                    <frontend_model>Byte8\PingBell\Block\Adminhtml\System\Config\FetchBells</frontend_model>
                 </field>
             </group>
         </section>

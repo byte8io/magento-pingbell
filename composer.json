@@ -24,6 +24,5 @@
         "psr-4": {
             "Byte8\\PingBell\\": ""
         }
-    },
-    "version": "1.2.0"
+    }
 }

@@ -68,4 +68,23 @@
             <argument name="eventKey" xsi:type="string">new_customer</argument>
         </arguments>
     </virtualType>
+
+    <!-- Activation: bind PingBell's product_id + config path prefix to the
+         shared Byte8\Activation\Model\Activation gate. The empty subclass
+         Model/Activation/Activation.php exists as a type-hint anchor. -->
+    <type name="Byte8\PingBell\Model\Activation\Activation">
+        <arguments>
+            <argument name="productId" xsi:type="string">pingbell</argument>
+            <argument name="configPathPrefix" xsi:type="string">byte8_pingbell/activation/</argument>
+        </arguments>
+    </type>
+
+    <!-- CLI registration -->
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="byte8_pingbell_activate" xsi:type="object">Byte8\PingBell\Console\Command\ActivateCommand</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

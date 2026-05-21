@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Byte8\PingBell\Observer;
 
+use Byte8\PingBell\Model\Activation\Activation;
 use Byte8\PingBell\Model\Config;
 use Byte8\PingBell\Model\PingBellClient;
 use Magento\Framework\Event\Observer;
@@ -20,6 +21,7 @@ class SendPingBellNotification implements ObserverInterface
         private readonly Config $config,
         private readonly PingBellClient $pingBellClient,
         private readonly LoggerInterface $logger,
+        private readonly Activation $activation,
         private readonly string $eventKey = 'new_order'
     ) {
     }
@@ -27,6 +29,10 @@ class SendPingBellNotification implements ObserverInterface
     public function execute(Observer $observer): void
     {
         if (!$this->config->isEnabled()) {
+            return;
+        }
+
+        if (!$this->activation->isActive()) {
             return;
         }
 

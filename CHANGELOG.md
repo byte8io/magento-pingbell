@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.4.0](https://github.com/byte8io/magento-pingbell/compare/v1.3.0...v1.4.0) (2026-05-21)
+
+
+### Features
+
+* **activation:** gate notifications behind byte8 activation key ([9ac412c](https://github.com/byte8io/magento-pingbell/commit/9ac412c116afcdc87a8c0999adb6c29ec5187326))
+* **nav:** add "← All docs" link to navbar pointing to docs hub ([dc6b1d7](https://github.com/byte8io/magento-pingbell/commit/dc6b1d7591b7b2abde5e0b0f55213ff3ca49dd9c))
+* **search:** wire Algolia DocSearch — cross-product search across docs.byte8.io ([0c645b4](https://github.com/byte8io/magento-pingbell/commit/0c645b4e6af3b18e40c9c637e694771f7a86fc83))
+
+
+### Bug Fixes
+
+* **docs:** lock landing page stats strip to fixed 4-up so the last card stops wrapping ([3cc0ffc](https://github.com/byte8io/magento-pingbell/commit/3cc0ffc41582224c24a6961304e11d429c8ccc6b))
+* **search:** force full nav for cross-site search results ([352ab0f](https://github.com/byte8io/magento-pingbell/commit/352ab0f8ff02014b9080426c36443f4bc6959cbf))
+* **search:** keep DocSearch links internal-looking for SEO + clientModule for same-tab nav ([742a10d](https://github.com/byte8io/magento-pingbell/commit/742a10daf50eec4cf3b7db6f61db4b4af0aa4cf1))
+
+
+### Documentation
+
+* migrate to docs.byte8.io/pingbell unified domain ([dbc4710](https://github.com/byte8io/magento-pingbell/commit/dbc47106a55fba17cf9d6e9cee1fcfe96f909c49))
+
 ## [1.3.0](https://github.com/byte8io/magento-pingbell/compare/v1.2.2...v1.3.0) (2026-05-05)
 
 

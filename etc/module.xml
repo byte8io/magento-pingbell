@@ -10,7 +10,6 @@
     <module name="Byte8_PingBell">
         <sequence>
             <module name="Byte8_Core"/>
-            <module name="Byte8_Activation"/>
             <module name="Magento_Sales"/>
             <module name="Magento_Backend"/>
             <module name="Magento_Config"/>

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/byte8io/magento-pingbell/compare/v1.4.1...v1.4.2) (2026-09-26)
+
+
+### Bug Fixes
+
+* relax byte8/module-core constraint to allow 3.x ([76e22b9](https://github.com/byte8io/magento-pingbell/commit/76e22b937d8458ae11d70dbfd346d23c8082cf27))
+
 ## [1.4.1](https://github.com/byte8io/magento-pingbell/compare/v1.4.0...v1.4.1) (2026-06-15)
 
 
